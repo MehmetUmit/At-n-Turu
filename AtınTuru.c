@@ -37,11 +37,11 @@ int main(void){
         printf("\n");
     }
     
-	//Başlangıç konumunun girilmesi
+    //Başlangıç konumunun girilmesi
     printf("Baslangic konumunu giriniz (Satir-Sutun)(0-7) :");
     scanf("%d %d",&currentR,&currentC);
     
-	//Başlangıç konumunun atanması
+    //Başlangıç konumunun atanması
     board[currentR][currentC] = 1;
     for(i = 2;i <= 64;i++){
         nextMov();
@@ -51,7 +51,7 @@ int main(void){
     }
     printf("\n");
     
-	//Tahtanın yazdırılması
+    //Tahtanın yazdırılması
     for(i = 0;i < B_SIZE;i++){
         for(j = 0;j < B_SIZE;j++){
             printf("%d\t",board[i][j]);
@@ -65,7 +65,7 @@ int main(void){
 void nextMov(){
     int i,minA = 9,nextR,nextC;
     
-	//Bütün gidebileceği yerlere bakılır (8 durum var)
+    //Bütün gidebileceği yerlere bakılır (8 durum var)
     for(i = 0;i < 8;i++){
         //Atın gidebileceği konumlar tahtanın içerisindeyse ve gidebileceği konuma daha önce uğramadıysa 
         if(currentR + movR[i] < B_SIZE && currentR + movR[i] >= 0 && currentC + movC[i] < B_SIZE && currentC + movC[i] >= 0 && board[currentR +movR[i]][currentC +movC[i]] == 0){
